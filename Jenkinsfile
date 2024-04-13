@@ -6,39 +6,39 @@ pipeline{
         PRODUCTION_ENVIRONMENT = "prd"
     }
     stages{
-        stage('build'){
+        stage('Build'){
             steps{
                 echo "DIRECTORY_PATH: $DIRECTORY_PATH"
                 echo "compile the code and generate any necessary artifacts"
             }
         }
 
-        stage('test'){
+        stage('Unit_and_Integration_Tests'){
             steps{
                 echo "unit tests"
                 echo "integration tests"
             }
         }
 
-        stage('code_quality_check'){
+        stage('Code_Analysis'){
             steps{
                 echo "check the quality of the code"
             }
         }
 
-        stage('deploy'){
+        stage('Security_Scan'){
             steps{
                 echo "deploy the application to a testing environment specified by the environment variable"
             }
         }
 
-        stage('approval'){
+        stage('Integration_Tests_on_Staging'){
             steps{
                 sleep 10
             }
         }
 
-        stage('deploy_to_production'){
+        stage('Deploy_to_Production'){
             steps{
                 echo "PRODUCTION_ENVIRONMENT: $PRODUCTION_ENVIRONMENT"
             }
