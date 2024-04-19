@@ -32,13 +32,13 @@ pipeline{
                 success{
                     mail to: "forsterfung@gmail.com",
                     subject: "Build Status Email",
-                    Body: "Build was successful!"
+                    Body: "Build was successful!",
                     emailext attachLog: true
                 }
                 failure{
                     mail to: "forsterfung@gmail.com",
                     subject: "Build Status Email",
-                    Body: "Build was failure!"
+                    Body: "Build was failure!",
                     emailext attachLog: true
 
                 }
