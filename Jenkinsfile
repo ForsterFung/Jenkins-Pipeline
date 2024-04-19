@@ -29,6 +29,7 @@ pipeline{
                 // OWASP ZAP is a security scanning tool available in this stage
             }
             post{
+                // notification emails
                 success{
                     emailext to: "forsterfung@gmail.com",
                     subject: "Build Status Email",
