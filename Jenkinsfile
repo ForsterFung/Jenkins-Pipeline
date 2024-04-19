@@ -33,7 +33,7 @@ pipeline{
                     emailext to: "forsterfung@gmail.com",
                     subject: "Build Status Email",
                     body: "Build was successful!",
-                    attachLog: true
+                    attachLog: false
                     //mail to: "forsterfung@gmail.com",
                     //subject: "Build Status Email",
                     //body: "Build was successful!",
