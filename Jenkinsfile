@@ -30,18 +30,18 @@ pipeline{
             }
             post{
                 success{
-                    emailext recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+                    //emailext 
                     //to: "forsterfung@gmail.com",
-                    subject: "Build Status Email",
-                    body: "Build was successful!",
-                    attachLog: true
-                        
-                    
-                    
-                    //mail to: "forsterfung@gmail.com",
                     //subject: "Build Status Email",
                     //body: "Build was successful!",
                     //attachLog: true
+                        
+                    
+                    
+                    mail to: "forsterfung@gmail.com",
+                    subject: "Build Status Email",
+                    body: "Build was successful!"
+                    
                 }
              }
          }
