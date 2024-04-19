@@ -31,13 +31,12 @@ pipeline{
             post{
                 success{
                     mail to: "forsterfung@gmail.com",
-                        subject: "Build Status Email",
-                        body: "Build was successful!",
-                        attachLog: true
-                    }
+                    subject: "Build Status Email",
+                    body: "Build was successful!",
+                    attachLog: true
                 }
-            }
-        }
+             }
+         }
 
         stage('Deploy_to_Staging'){
             steps{
