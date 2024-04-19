@@ -28,6 +28,21 @@ pipeline{
                 echo "Codes for security scanning......"
                 // OWASP ZAP is a security scanning tool available in this stage
             }
+            post{
+                success{
+                    mail to: "forsterfung@gmail.com",
+                    subject: "Build Status Email",
+                    Body: "Build was successful!"
+                    emailext attachLog: true
+                }
+                failure{
+                    mail to: "forsterfung@gmail.com",
+                    subject: "Build Status Email",
+                    Body: "Build was failure!"
+                    emailext attachLog: true
+
+                }
+            }
         }
 
         stage('Deploy_to_Staging'){
