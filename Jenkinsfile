@@ -1,46 +1,53 @@
 pipeline{
     agent any
-    environment {
-        DIRECTORY_PATH = "C:/ProgramData/Jenkins/.jenkins/workspace/SIT223_SIT753-5.1P"
-        TESTING_ENVIRONMENT = "dev"
-        PRODUCTION_ENVIRONMENT = "prd"
-    }
+    
     stages{
         stage('Build'){
             steps{
-                echo "DIRECTORY_PATH: $DIRECTORY_PATH"
-                echo "compile the code and generate any necessary artifacts"
+                echo "Codes for building...... "
+                // The build automation tool, Maven, can be used
             }
         }
 
         stage('Unit_and_Integration_Tests'){
             steps{
-                echo "unit tests"
-                echo "integration tests"
+                echo "Codes to run unit tests and integration tests......"
+                // The testing frameworks, JUnit or TestNG, can be applied
             }
         }
 
         stage('Code_Analysis'){
             steps{
-                echo "check the quality of the code"
+                echo "Codes for analysis......"
+                // The code analysis tool, SonarQube, is suitable for integration
             }
         }
 
         stage('Security_Scan'){
             steps{
-                echo "deploy the application to a testing environment specified by the environment variable"
+                echo "Codes for security scanning......"
+                // OWASP ZAP is a security scanning tool available in this stage
+            }
+        }
+
+        stage('Deploy_to_Staging'){
+            steps{
+                echo "Codes for deploying the application to a staging server......"
+                // Example for staging server: AWS EC2 instance (DEV/UAT environment)
             }
         }
 
         stage('Integration_Tests_on_Staging'){
             steps{
-                sleep 10
+                echo "Codes to perform integration tests on the staging environment......"
+                // Conduct system integration testing on the staging server
             }
         }
 
         stage('Deploy_to_Production'){
             steps{
-                echo "PRODUCTION_ENVIRONMENT: $PRODUCTION_ENVIRONMENT"
+                echo "Codes for the production deployment......"
+                // Deploy the application to the production server (e.g. AWS EC2 instance of Prod environment)
             }
         }
     }
